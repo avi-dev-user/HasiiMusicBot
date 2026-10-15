@@ -163,7 +163,7 @@ Install the following before contributing:
 Clone the repository.
 
 ```bash
-git clone https://github.com/lakzexe/HasiiMusicBot.git
+git clone https://github.com/hazindu/HasiiMusicBot.git
 
 cd HasiiMusicBot
 ```

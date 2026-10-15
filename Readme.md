@@ -6,7 +6,7 @@
 <br>
 
 [![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
-![Repo Views](https://komarev.com/ghpvc/?username=lakzexe-HasiiMusicBot&label=Repo%20views&color=0e75b6&style=for-the-badge)
+![Repo Views](https://komarev.com/ghpvc/?username=hazindu-HasiiMusicBot&label=Repo%20views&color=0e75b6&style=for-the-badge)
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg?style=for-the-badge)](LICENSE)
 [![Telegram Support](https://img.shields.io/badge/Telegram-Support-26A5E4?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/Hasindu_Lakshan)
 
@@ -16,6 +16,35 @@ Open-source Telegram music bot built with **Python**, **Pyrogram**, **PyTgCalls*
 Delivering fast, reliable and high-quality audio streaming directly to Telegram voice chats.
 
 </div>
+
+---
+
+## 🧭 Quick Navigation
+
+| Start here | Explore | Reference |
+|------------|---------|-----------|
+| [About](#-about) · [Why Hasii Music?](#-why-hasii-music) · [Quick Start](#-quick-start) | [Features](#-features) · [Tech Stack](#-tech-stack) · [Project Structure](#-project-structure) | [Environment Variables](#-environment-variables) · [Commands](#-commands) · [Installation](#-installation) |
+
+### ⚡ At a Glance
+
+<div align="left">
+
+- 🏁 Ideal for: Telegram voice chat streaming with YouTube, radio, and queue controls
+- ⚙️ Setup: Python + FFmpeg + MongoDB + Telegram credentials
+- 🚀 Run locally: install dependencies, copy the sample env file, and start the bot
+- 🐳 Deploy: Docker or Docker Compose support is included
+- 📚 Docs: this README covers setup, configuration, commands, structure, and support
+
+</div>
+
+### ✅ Recommended Reading Path
+
+1. [About](#-about)
+2. [Requirements](#-requirements)
+3. [Quick Start](#-quick-start)
+4. [Environment Variables](#-environment-variables)
+5. [Installation](#-installation)
+6. [Commands](#-commands)
 
 ---
 
@@ -158,7 +187,7 @@ curl -fsSL https://deno.land/x/install/install.sh | sh
 Clone the repository.
 
 ```bash
-git clone https://github.com/lakzexe/HasiiMusicBot.git
+git clone https://github.com/hazindu/HasiiMusicBot.git
 ```
 
 Move into the project directory.
@@ -234,7 +263,7 @@ COOKIE_URL=
 Clone the repository.
 
 ```bash
-git clone https://github.com/lakzexe/HasiiMusicBot.git
+git clone https://github.com/hazindu/HasiiMusicBot.git
 ```
 
 Enter the project directory.
@@ -404,7 +433,7 @@ Feel free to reach out through the following platforms.
 
 | Platform | Link |
 |----------|------|
-| 💻 GitHub Repository | https://github.com/lakzexe/HasiiMusicBot |
+| 💻 GitHub Repository | https://github.com/hazindu/HasiiMusicBot |
 | 📢 Telegram Channel | https://t.me/TheInfinityAI |
 | 💬 Telegram Support | https://t.me/Hasindu_Lakshan |
 
@@ -447,6 +476,6 @@ Your support helps increase the project's visibility and encourages future devel
 
 <br>
 
-**Made with ❤️ by <a href="https://github.com/lakzexe">Hasindu Nagolla</a>**
+**Made with ❤️ by <a href="https://github.com/hazindu">Hasindu Nagolla</a>**
 
 </div>
