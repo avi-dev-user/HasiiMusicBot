@@ -19,33 +19,6 @@ Delivering fast, reliable and high-quality audio streaming directly to Telegram 
 
 ---
 
-## 🧭 Quick Navigation
-
-| Start here | Explore | Reference |
-|------------|---------|-----------|
-| [About](#-about) · [Why Hasii Music?](#-why-hasii-music) · [Quick Start](#-quick-start) | [Features](#-features) · [Tech Stack](#-tech-stack) · [Project Structure](#-project-structure) | [Environment Variables](#-environment-variables) · [Commands](#-commands) · [Installation](#-installation) |
-
-### ⚡ At a Glance
-
-<div align="left">
-
-- 🏁 Ideal for: Telegram voice chat streaming with YouTube, radio, and queue controls
-- ⚙️ Setup: Python + FFmpeg + MongoDB + Telegram credentials
-- 🚀 Run locally: install dependencies, copy the sample env file, and start the bot
-- 🐳 Deploy: Docker or Docker Compose support is included
-- 📚 Docs: this README covers setup, configuration, commands, structure, and support
-
-</div>
-
-### ✅ Recommended Reading Path
-
-1. [About](#-about)
-2. [Requirements](#-requirements)
-3. [Quick Start](#-quick-start)
-4. [Environment Variables](#-environment-variables)
-5. [Installation](#-installation)
-6. [Commands](#-commands)
-
 ---
 
 # 📖 About
