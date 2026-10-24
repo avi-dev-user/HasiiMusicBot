@@ -15,7 +15,7 @@ from pytgcalls import PyTgCalls
 from pyrogram.types import Message
 from HasiiMusic.helpers import Media, Track
 from HasiiMusic.helpers._requester import ensure_current_track
-from HasiiMusic import queue
+from HasiiMusic import queue as playback_queue
 
 from .utils import CallsUtils, PyTgCallsErrorFilter
 from .manager import CallsManager
@@ -66,7 +66,7 @@ class TgCall(PyTgCalls):
     async def seek_stream(self, chat_id: int, seconds: int, *, expected_media=None) -> bool:
         async with self.get_lock(chat_id):
             if expected_media is not None:
-                ensure_current_track(queue.get_current(chat_id), expected_media)
+                ensure_current_track(playback_queue.get_current(chat_id), expected_media)
             return await self._controls.seek_stream(chat_id, seconds)
 
     async def play_media(

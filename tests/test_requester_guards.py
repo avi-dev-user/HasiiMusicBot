@@ -5,7 +5,7 @@ from pathlib import Path
 import sys
 from types import ModuleType, SimpleNamespace
 import unittest
-from unittest.mock import patch
+from unittest.mock import AsyncMock, patch
 
 PROJECT = Path(__file__).resolve().parents[1]
 REQUESTER_MODULE = None
@@ -151,7 +151,7 @@ class RequesterGuardTests(unittest.IsolatedAsyncioTestCase):
                 self.assertEqual(self.controller._pending_transitions, {-10})
                 self.assertEqual(self.controller._track_index, {})
 
-    def facade(self):
+    def facade(self, *, load_real_queue=False):
         name = 'requester_calls_facade'
         package_path = PROJECT / 'HasiiMusic/core/calls/__init__.py'
         spec = importlib.util.spec_from_file_location(name, package_path,
@@ -167,6 +167,8 @@ class RequesterGuardTests(unittest.IsolatedAsyncioTestCase):
             'controls': {'CallControls': type(self.controls)},
             'queue': {'CallQueue': type(self.call_queue)},
         }.items():
+            if load_real_queue and suffix == 'queue':
+                continue
             component = ModuleType(f'{name}.{suffix}')
             component.__dict__.update(values)
             stubs[component.__name__] = component
@@ -174,7 +176,19 @@ class RequesterGuardTests(unittest.IsolatedAsyncioTestCase):
             spec.loader.exec_module(module)
         controller = module.TgCall()
         controller.played = []
+        self.facade_module = module
         return controller
+
+    async def test_seek_guard_survives_real_queue_submodule_import(self):
+        controller = self.facade(load_real_queue=True)
+        self.assertIsInstance(self.facade_module.queue, ModuleType)
+        controller._controls.seek_stream = AsyncMock(return_value=True)
+        self.assertTrue(await controller.seek_stream(-10, 15, expected_media=self.original))
+        controller._controls.seek_stream.assert_awaited_once_with(-10, 15)
+        self.current = SimpleNamespace(**vars(self.original))
+        with self.assertRaises(self.requester.TrackChangedError):
+            await controller.seek_stream(-10, 20, expected_media=self.original)
+        self.assertEqual(controller._controls.seek_stream.await_count, 1)
 
     async def test_facade_forwards_expected_track_to_each_guarded_operation(self):
         controller = self.facade()
